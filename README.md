@@ -1,98 +1,47 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Cuida tu Adulto Mayor - Aplicación Móvil
 
-# Getting Started
+Aplicación móvil diseñada para el monitoreo y detección de caídas en adultos mayores. El sistema se conecta en tiempo real a la nube (Firebase) para recibir alertas instantáneas generadas por el hardware IoT del paciente.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Requisitos Previos
 
-## Step 1: Start Metro
+Para compilar e instalar la aplicación en un dispositivo físico, es necesario contar con:
+* Node.js instalado en el equipo.
+* Un dispositivo móvil con sistema operativo Android.
+* Un cable USB para la conexión entre el equipo y el celular.
+* La opción de "Depuración por USB" (USB Debugging) activada en las opciones de desarrollador del dispositivo móvil.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Guía de Instalación en Dispositivo Físico
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Siga los siguientes pasos para compilar e instalar la aplicación:
 
-```sh
-# Using npm
-npm start
+### 1. Clonar el repositorio
+Abra la terminal y descargue el proyecto en su equipo local:
 
-# OR using Yarn
-yarn start
-```
+git clone https://github.com/Jacobzzz3/cuida-tu-adulto-mayor-app.git
+cd cuida-tu-adulto-mayor-app
 
-## Step 2: Build and run your app
+### 2. Instalar las dependencias
+Ejecute el siguiente comando para instalar las librerías necesarias del proyecto:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+npm install
 
-### Android
+### 3. Configuración de Firebase
+Por políticas de seguridad, las credenciales de la base de datos no se incluyen en este repositorio. Para el correcto funcionamiento de la aplicación:
+1. Solicite el archivo de configuración google-services.json al administrador del proyecto.
+2. Ubique este archivo dentro de la ruta exacta: android/app/
 
-```sh
-# Using npm
+### 4. Conectar el dispositivo
+1. Conecte el dispositivo Android al computador mediante el cable USB.
+2. Si el dispositivo solicita un modo de conexión, seleccione "Transferencia de archivos" o autorice la depuración USB.
+3. Para verificar que el equipo reconoce el dispositivo, ejecute en la terminal:
+
+adb devices
+
+(Debe aparecer una lista indicando que hay un dispositivo conectado).
+
+### 5. Instalar y Ejecutar
+Con el dispositivo conectado y reconocido, ejecute el siguiente comando para iniciar la compilación e instalación:
+
 npm run android
 
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-"# aplicacion-rasp" 
+Nota: La primera ejecución puede demorar varios minutos mientras el sistema descarga las herramientas de compilación de Gradle. Al finalizar, la aplicación se abrirá automáticamente en el dispositivo.
